@@ -9,12 +9,12 @@ import (
 )
 
 const (
-	serviceName = "papermc"
+	serviceName = "minecraft"
 	mcDir       = "/home/minecraft/minecraft-server"
 	idleDir     = "/home/minecraft/mc-roestbak-dashboard/idle_worlds"
 	backupDir   = "/home/minecraft/mc-roestbak-dashboard/backups"
 	activeMeta  = "/home/minecraft/mc-roestbak-dashboard/.active_name"
-	addr        = ":8080"
+	addr        = ":80"
 )
 
 // run command and return output
