@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Minecraft Server Manager</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+			rel="stylesheet" />
+	</head>
+	<body class="bg-gray-100 text-gray-800">
+		<nav class="bg-gray-900 text-white p-4 flex space-x-6">
+			<a href="/" class="hover:text-yellow-400">
+				<i class="fa fa-home"></i> Home
+			</a>
+			<a href="/worlds" class="hover:text-yellow-400">
+				<i class="fa fa-globe"></i> Worlds
+			</a>
+			<a href="/logs" class="hover:text-yellow-400">
+				<i class="fa fa-file-alt"></i> Logs
+			</a>
+		</nav>
+
+		<main class="p-6">
+			<h1 class="text-2xl font-bold mb-4">Roestbak Minecraft Server Dashboard</h1>
+
+			<div class="mb-6">
+				<p><strong>Uptime:</strong> {{ .Uptime }}</p>
+				<p><strong>Active World:</strong> {{ .World }}</p>
+			</div>
+
+			<div class="space-x-2 my-4 bg-gray-300 rounded-md p-4">
+				<h2 class="font-bold text-xl mb-4">
+					Systemd daemon service (PaperMC) control
+				</h2>
+				<!-- Start -->
+				<button
+					class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded">
+					<i class="fa fa-play"></i> Start Server
+				</button>
+
+				<!-- Stop -->
+				<button
+					class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded">
+					<i class="fa fa-stop"></i> Stop Server
+				</button>
+
+				<!-- Reload Worlds -->
+				<button
+					class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded"
+					title="Use this after swapping or restoring worlds">
+					<i class="fa fa-redo"></i> Reload Server Files
+				</button>
+
+				<p class="text-sm text-gray-600 mt-4">
+					Use reload after changing server files (such as changing the
+					world), to update the systemd service before restarting
+				</p>
+			</div>
+
+			<div class="space-x-2 my-4 bg-gray-300 rounded-md p-4">
+				<h2 class="font-bold text-xl mb-4">
+					Create New World
+				</h2>
+        <form action="" method="get">
+          <label for="name">new world name</label>
+          <input type="text" id="name" name="name" class="rounded-md p-1 border-gray-400 border-2 w-full mb-4">
+        </form>
+				<button
+					class="bg-yellow-600 hover:bg-yellow-700 text-white px-4 py-2 rounded"
+          type="submit">
+					<i class="fa fa-trash"></i> Reset server files
+				</button>
+				<p class="text-sm text-gray-600 mt-4">
+					This will move the active world from the PaperMC server files
+					into the worlds folder, leaving the server files without
+					world so that PaperMC creates a new world when the server restarts.
+				</p>
+			</div>
+		</main>
+	</body>
+</html>

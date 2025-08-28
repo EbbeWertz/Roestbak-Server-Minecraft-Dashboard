@@ -1,6 +1,5 @@
 #!/bin/bash
 # Run op de linux server via root user
-read -p "Press any key to start deployment"
 
 # Variables
 TARGET_DIR="/home/minecraft/mc-roestbak-dashboard"

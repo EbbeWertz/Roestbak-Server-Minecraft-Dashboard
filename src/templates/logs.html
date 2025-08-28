@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Minecraft Server Manager</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+			rel="stylesheet" />
+	</head>
+	<body class="bg-gray-100 text-gray-800">
+		<nav class="bg-gray-900 text-white p-4 flex space-x-6">
+			<a href="/" class="hover:text-yellow-400"
+				><i class="fa fa-home"></i> Home</a
+			>
+			<a href="/worlds" class="hover:text-yellow-400"
+				><i class="fa fa-globe"></i> Worlds</a
+			>
+			<a href="/logs" class="hover:text-yellow-400"
+				><i class="fa fa-file-alt"></i> Logs</a
+			>
+		</nav>
+		<main class="p-6">
+			<h1 class="text-2xl font-bold mb-4">Logs</h1>
+			<div
+				class="bg-black text-green-400 font-mono p-4 rounded h-96 overflow-y-scroll">
+				{{ range .Logs }}
+				<p>{{ . }}</p>
+				{{ end }}
+			</div>
+		</main>
+	</body>
+</html>

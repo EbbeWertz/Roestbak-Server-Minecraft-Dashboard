@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Minecraft Server Manager</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+			rel="stylesheet" />
+	</head>
+	<body class="bg-gray-100 text-gray-800">
+		<nav class="bg-gray-900 text-white p-4 flex space-x-6">
+			<a href="/" class="hover:text-yellow-400"
+				><i class="fa fa-home"></i> Home</a
+			>
+			<a href="/worlds" class="hover:text-yellow-400"
+				><i class="fa fa-globe"></i> Worlds</a
+			>
+			<a href="/logs" class="hover:text-yellow-400"
+				><i class="fa fa-file-alt"></i> Logs</a
+			>
+		</nav>
+		<main class="p-6">
+			<h1 class="text-2xl font-bold mb-4">Worlds</h1>
+
+			<h2 class="text-xl mb-2">Available Worlds</h2>
+			<ul class="mb-6">
+				{{ range .Worlds }}
+				<li
+					class="flex justify-between items-center bg-white shadow p-2 mb-2 rounded">
+					<span>{{ . }}</span>
+					<div class="space-x-2">
+						<button
+							class="bg-gray-600 hover:bg-gray-700 text-white px-3 py-1 rounded">
+							<i class="fa fa-pen"></i> Rename
+						</button>
+						<button
+							class="bg-purple-600 hover:bg-purple-700 text-white px-3 py-1 rounded">
+							<i class="fa fa-save"></i> Backup
+						</button>
+					</div>
+				</li>
+				{{ end }}
+			</ul>
+
+			<h2 class="text-xl mb-2">Backups</h2>
+			<ul>
+				{{ range .Backups }}
+				<li
+					class="flex justify-between items-center bg-white shadow p-2 mb-2 rounded">
+					<span>{{ . }}</span>
+					<div class="space-x-2">
+						<button
+							class="bg-green-600 hover:bg-green-700 text-white px-3 py-1 rounded">
+							<i class="fa fa-undo"></i> Restore
+						</button>
+						<button
+							class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded">
+							<i class="fa fa-download"></i> Download
+						</button>
+					</div>
+				</li>
+				{{ end }}
+			</ul>
+		</main>
+	</body>
+</html>

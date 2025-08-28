@@ -1,9 +1,0 @@
-{{ define "content" }}
-<h1 class="text-2xl font-bold mb-4">Server Logs</h1>
-<form method="get" class="mb-3">
-  <label>Lines:</label>
-  <input name="n" value="{{ .N }}" class="border rounded px-2 py-1 w-20" />
-  <button class="ml-2 px-3 py-1 bg-gray-800 text-white rounded">Refresh</button>
-</form>
-<pre class="bg-black text-green-400 p-4 rounded-xl shadow text-sm whitespace-pre-wrap">{{ .Logs }}</pre>
-{{ end }}
