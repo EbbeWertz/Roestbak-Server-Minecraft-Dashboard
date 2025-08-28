@@ -11,9 +11,9 @@ import (
 const (
 	serviceName = "papermc"
 	mcDir       = "/home/minecraft/minecraft-server"
-	idleDir     = "/home/minecraft/minecraft-server/idle_worlds"
-	backupDir   = "/home/minecraft/minecraft-server/backups"
-	activeMeta  = "/home/minecraft/minecraft-server/.active_name"
+	idleDir     = "/home/minecraft/mc-roestbak-dashboard/idle_worlds"
+	backupDir   = "/home/minecraft/mc-roestbak-dashboard/backups"
+	activeMeta  = "/home/minecraft/mc-roestbak-dashboard/.active_name"
 	addr        = ":8080"
 )
 
