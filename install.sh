@@ -10,7 +10,7 @@ echo "Preparing target directory..."
 mkdir -p "$TARGET_DIR"
 
 echo "Copying binary..."
-cp "./build/dashboard-executable" "$TARGET_DIR/$BINARY_NAME"
+cp "./../dashboard-executable" "$TARGET_DIR/$BINARY_NAME"
 
 echo "Copying templates..."
 cp -r "./src/html" "$TARGET_DIR/html"
